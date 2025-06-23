@@ -22,7 +22,6 @@ int main()
         printf("Posição %d: %d \n",i+1,ptr1[i]);
     }
     printf("\nVetor 2\n");
-    for ( i = 0; i < x*2; i++)
     {
         ptr2[i]=pow(3,i);
         printf("Posição %d: %d \n",i+1,ptr2[i]);
