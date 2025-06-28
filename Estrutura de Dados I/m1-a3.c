@@ -10,7 +10,7 @@ int main()
     int *ptr2;
 
     setlocale(LC_ALL,"Portuguese");
-    printf("Escolha um tamanho para o vetor din‚mico: ");
+    printf("Escolha um tamanho para o vetor din√¢mico: ");
     scanf("%d",&x);
     ptr1=(int*)malloc(sizeof(int)*x);
     ptr2=(int*)malloc(sizeof(int)*(x*2));
@@ -19,13 +19,13 @@ int main()
     for ( i = 0; i < x; i++)
     {
         ptr1[i]=pow(2,i);
-        printf("PosiÁ„o %d: %d \n",i+1,ptr1[i]);
+        printf("Posi√ß√£o %d: %d \n",i+1,ptr1[i]);
     }
     printf("\nVetor 2\n");
     for ( i = 0; i < x*2; i++)
     {
         ptr2[i]=pow(3,i);
-        printf("PosiÁ„o %d: %d \n",i+1,ptr2[i]);
+        printf("Posi√ß√£o %d: %d \n",i+1,ptr2[i]);
     }
     
     return 0;
