@@ -14,10 +14,10 @@ struct str_pilha pilha; //variáveis globais
 int op=1;
 
 //Protipação
-void pilha_entrar();
-void pilha_sair();
-void pilha_mostrar();
-void menu_mostrar();
+void adicionar_livros();
+void remover_livros();
+void exibir_livros();
+void exibir_menu();
 
 //Função principal
 int main(){
@@ -26,15 +26,15 @@ int main(){
   pilha.fim = 0;
   while (op != 0) {
      system("cls");  
-     pilha_mostrar();
-     menu_mostrar();
+     exibir_livros();
+     exibir_menu();
      scanf(" %d", &op);
      switch (op) {
          case 1:
-            pilha_entrar();
+            adicionar_livros();
          break;
          case 2:
-           pilha_sair();
+           remover_livros();
          break;
         }      
     }  
@@ -42,7 +42,7 @@ int main(){
 }
 
 //Adicionar um elemento no final da Pilha
-void pilha_entrar(){
+void adicionar_livros(){
   if (pilha.fim == tamanho) {
      printf("\nA pilha está cheia, impossível empilhar!\n\n");
      system("pause");      
@@ -55,7 +55,7 @@ void pilha_entrar(){
 }
 
 //Retirar o último elemento da Pilha
-void pilha_sair() {
+void remover_livros() {
   if (pilha.inicio == pilha.fim) {
     printf("\nA pilha está vazia, impossível desempilhar!\n\n");
     system("pause");      
@@ -67,7 +67,7 @@ void pilha_sair() {
 }
 
 //Mostrar o conteúdo da Pilha
-void pilha_mostrar() {  
+void exibir_livros() {  
   printf("[  ");        
   for (int i = 0; i < tamanho; i++) {
      printf("%d  ", pilha.dados[i]);          
@@ -76,7 +76,7 @@ void pilha_mostrar() {
 }
 
 //Mostrar o menu de opções
-void menu_mostrar() {
+void exibir_menu() {
   printf("\nEscolha uma opção:\n");        
   printf("1 - Empilhar\n");            
   printf("2 - Desempilhar\n");            

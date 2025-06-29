@@ -19,7 +19,7 @@ int op = 1;
 void fila_entrar();
 void fila_sair();
 void fila_mostrar();
-void menu_mostrar();
+void exibir_menu();
 
 int main() {
     setlocale(LC_ALL, "Portuguese");
@@ -31,7 +31,7 @@ int main() {
     while (op != 0) {
         system("cls");
         fila_mostrar();
-        menu_mostrar();
+        exibir_menu();
         scanf(" %d", &op);
         switch (op) {
             case 1:
@@ -83,7 +83,7 @@ void fila_mostrar() {
 }
 
 // Mostrar menu
-void menu_mostrar() {
+void exibir_menu() {
     printf("Escolha uma opção:\n");
     printf("1 - Inserir na fila\n");
     printf("2 - Remover da fila\n");
