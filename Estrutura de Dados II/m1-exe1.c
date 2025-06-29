@@ -65,7 +65,7 @@ void mostrarMenu() {
     system("cls || clear"); // compatível com Windows e Linux
     printf("NÓS ATUAIS NA ÁRVORE: ");
     for (int i = 0; i < proximoIndice; i++) {
-        printf("%c - %d; ", arvore[i].letra,i);
+        printf("%c - %d; ", arvore[i].letra);
     }
     printf("\n\n==== MENU ====\n");
     printf("1 - Inserir um NÓ na árvore\n");
