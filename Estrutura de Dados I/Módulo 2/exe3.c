@@ -6,7 +6,7 @@
 
 // Estrutura da fila circular
 struct str_fila {
-    int dados[TAMANHO];
+    int nome[TAMANHO];
     int inicio;
     int fim;
     int quantidade; // Conta quantos elementos tem na fila
@@ -48,11 +48,11 @@ int main() {
 // Inserir elemento na fila circular
 void fila_entrar() {
     if (fila.quantidade == TAMANHO) {
-        printf("\nA fila está cheia!\n\n");
+        wprintf("\nA fila está cheia!\n\n");
         system("pause");
     } else {
-        printf("\nDigite o valor a ser inserido: ");
-        scanf(" %d", &fila.dados[fila.fim]);
+        wprintf("\nDigite o valor a ser inserido: ");
+        scanf(" %d", &fila.nome[fila.fim]);
         fila.fim = (fila.fim + 1) % TAMANHO; // Avança o índice 'fim' para a próxima posição circularmente
         fila.quantidade++; //o %TAMANHO faz com que o vetor retorne a 0 quando atinge o limite.
     }
@@ -61,10 +61,10 @@ void fila_entrar() {
 // Remover elemento da fila circular
 void fila_sair() {
     if (fila.quantidade == 0) {
-        printf("\nA fila está vazia!\n\n");
+        wprintf("\nA fila está vazia!\n\n");
         system("pause");
     } else {
-        printf("\nValor removido: %d\n", fila.dados[fila.inicio]);
+        wprintf("\nValor removido: %d\n", fila.nome[fila.inicio]);
         fila.inicio = (fila.inicio + 1) % TAMANHO; // Apenas avança o índice 'inicio'
         fila.quantidade--;
         system("pause");
@@ -73,19 +73,19 @@ void fila_sair() {
 
 // Mostrar a fila
 void fila_mostrar() {
-    printf("Fila: [ ");
+    wprintf("Fila: [ ");
     int i, pos;
     for (i = 0, pos = fila.inicio; i < fila.quantidade; i++) { //i e pos são contaoores
-        printf("%d ", fila.dados[pos]);
+        wprintf("%d ", fila.nome[pos]);
         pos = (pos + 1) % TAMANHO;
     }
-    printf("]\n\n");
+    wprintf("]\n\n");
 }
 
 // Mostrar menu
 void exibir_menu() {
-    printf("Escolha uma opção:\n");
-    printf("1 - Inserir na fila\n");
-    printf("2 - Remover da fila\n");
-    printf("0 - Sair\n\n");
+    wprintf("Escolha uma opção:\n");
+    wprintf("1 - Inserir na fila\n");
+    wprintf("2 - Remover da fila\n");
+    wprintf("0 - Sair\n\n");
 }

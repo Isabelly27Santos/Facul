@@ -10,22 +10,22 @@ int main()
     int *ptr2;
 
     setlocale(LC_ALL,"Portuguese");
-    printf("Escolha um tamanho para o vetor dinâmico: ");
+    wprintf("Escolha um tamanho para o vetor dinâmico: ");
     scanf("%d",&x);
     ptr1=(int*)malloc(sizeof(int)*x);
     ptr2=(int*)malloc(sizeof(int)*(x*2));
 
-    printf("\n\nVetor 1\n");
+    wprintf("\n\nVetor 1\n");
     for ( i = 0; i < x; i++)
     {
         ptr1[i]=pow(2,i);
-        printf("Posição %d: %d \n",i+1,ptr1[i]);
+        wprintf("Posição %d: %d \n",i+1,ptr1[i]);
     }
-    printf("\nVetor 2\n");
+    wprintf("\nVetor 2\n");
     for ( i = 0; i < x*2; i++)
     {
         ptr2[i]=pow(3,i);
-        printf("Posição %d: %d \n",i+1,ptr2[i]);
+        wprintf("Posição %d: %d \n",i+1,ptr2[i]);
     }
     
     return 0;

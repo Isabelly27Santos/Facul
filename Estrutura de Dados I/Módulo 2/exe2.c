@@ -4,7 +4,7 @@
 #define tamanho 5
 
 struct str_fila {
-  int dados[tamanho];
+  int nome[tamanho];
   int inicio;
   int fim;  
 };
@@ -43,12 +43,12 @@ int main(){
 //Adicionar um elemento no final da Fila
 void fila_entrar(){
   if (fila.fim == tamanho) {
-        printf("\nA fila está cheia, volte outro dia!\n\n");          
+        wprintf("\nA fila está cheia, volte outro dia!\n\n");          
         system("pause");      
     }  
   else {    
-        printf("\nDigite o valor a ser inserido: ");        
-        scanf(" %d", &fila.dados[fila.fim]);  
+        wprintf("\nDigite o valor a ser inserido: ");        
+        scanf(" %d", &fila.nome[fila.fim]);  
         fila.fim++;  
     }  
 }
@@ -56,32 +56,32 @@ void fila_entrar(){
 //Retirar o primeiro elemento da Fila
 void fila_sair() {
   if (fila.inicio == fila.fim) {
-        printf("\nFila vazia, mas logo aparece alguém!\n\n");          
+        wprintf("\nFila vazia, mas logo aparece alguém!\n\n");          
         system("pause");      
     }          
   else {
         for (int i = 0; i < tamanho; i++) {
-          fila.dados[i] = fila.dados[i+1];          
+          fila.nome[i] = fila.nome[i+1];          
         }  
-        fila.dados[fila.fim] = 0;
+        fila.nome[fila.fim] = 0;
         fila.fim--;
     }  
 }
 
 //Mostrar o conteúdo da Fila
 void fila_mostrar() {
-  printf("[  ");        
+  wprintf("[  ");        
   for (int i = 0; i < tamanho; i++) {
-        printf("%d  ", fila.dados[i]);          
+        wprintf("%d  ", fila.nome[i]);          
    }
-  printf("]\n\n");        
+  wprintf("]\n\n");        
 }
 
 //Mostrar o menu de opções
 void exibir_menu() {
-  printf("\nEscolha uma opção:\n");        
-  printf("1 - Incluir na Fila\n");            
-  printf("2 - Excluir da Fila\n");   
-  printf("0 - Sair\n\n");           
+  wprintf("\nEscolha uma opção:\n");        
+  wprintf("1 - Incluir na Fila\n");            
+  wprintf("2 - Excluir da Fila\n");   
+  wprintf("0 - Sair\n\n");           
 }
      
