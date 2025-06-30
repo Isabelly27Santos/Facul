@@ -44,11 +44,11 @@ int main(){
 //Adicionar um elemento no final da Pilha
 void adicionar_livros(){
   if (pilha.fim == tamanho) {
-     wprintf("\nA pilha está cheia, impossível empilhar!\n\n");
+     printf("\nA pilha está cheia, impossível empilhar!\n\n");
      system("pause");      
    }  
   else {    
-     wprintf("\nDigite o valor a ser empilhado: ");        
+     printf("\nDigite o valor a ser empilhado: ");        
      scanf(" %d", &pilha.dados[pilha.fim]);  
      pilha.fim++;  
    }  
@@ -57,7 +57,7 @@ void adicionar_livros(){
 //Retirar o último elemento da Pilha
 void remover_livros() {
   if (pilha.inicio == pilha.fim) {
-    wprintf("\nA pilha está vazia, impossível desempilhar!\n\n");
+    printf("\nA pilha está vazia, impossível desempilhar!\n\n");
     system("pause");      
   }          
   else {
@@ -68,17 +68,17 @@ void remover_livros() {
 
 //Mostrar o conteúdo da Pilha
 void exibir_livros() {  
-  wprintf("[  ");        
+  printf("[  ");        
   for (int i = 0; i < tamanho; i++) {
-     wprintf("%d  ", pilha.dados[i]);          
+     printf("%d  ", pilha.dados[i]);          
   }
-  wprintf("]\n\n");        
+  printf("]\n\n");        
 }
 
 //Mostrar o menu de opções
 void exibir_menu() {
-  wprintf("\nEscolha uma opção:\n");        
-  wprintf("1 - Empilhar\n");            
-  wprintf("2 - Desempilhar\n");            
-  wprintf("0 - Sair\n\n");          
+  printf("\nEscolha uma opção:\n");        
+  printf("1 - Empilhar\n");            
+  printf("2 - Desempilhar\n");            
+  printf("0 - Sair\n\n");          
 }

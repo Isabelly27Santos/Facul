@@ -32,17 +32,17 @@ int buscarIndice(char letra) {
 // Função para inserir um nó novo
 void inserirNo(int indicePai, char letra, int lado) {
     if (proximoIndice >= TAMANHO) {
-        wprintf("Erro: árvore cheia!\n");
+        printf("Erro: árvore cheia!\n");
         return;
     }
 
     if (lado == ESQUERDA && arvore[indicePai].esquerda != -1) {
-        wprintf("Erro: o nó '%c' já possui um filho à esquerda.\n", arvore[indicePai].letra);
+        printf("Erro: o nó '%c' já possui um filho à esquerda.\n", arvore[indicePai].letra);
         return;
     }
 
     if (lado == DIREITA && arvore[indicePai].direita != -1) {
-        wprintf("Erro: o nó '%c' já possui um filho à direita.\n", arvore[indicePai].letra);
+        printf("Erro: o nó '%c' já possui um filho à direita.\n", arvore[indicePai].letra);
         return;
     }
 
@@ -63,14 +63,14 @@ void inserirNo(int indicePai, char letra, int lado) {
 // Exibe os nós existentes e o menu
 void mostrarMenu() {
     system("cls || clear"); // compatível com Windows e Linux
-    wprintf("NÓS ATUAIS NA ÁRVORE: ");
+    printf("NÓS ATUAIS NA ÁRVORE: ");
     for (int i = 0; i < proximoIndice; i++) {
-        wprintf("%c - %d; ", arvore[i].letra);
+        printf("%c - %d; ", arvore[i].letra);
     }
-    wprintf("\n\n==== MENU ====\n");
-    wprintf("1 - Inserir um NÓ na árvore\n");
-    wprintf("2 - Pesquisar um NÓ na árvore\n");
-    wprintf("0 - Sair\n\n");
+    printf("\n\n==== MENU ====\n");
+    printf("1 - Inserir um NÓ na árvore\n");
+    printf("2 - Pesquisar um NÓ na árvore\n");
+    printf("0 - Sair\n\n");
 }
 
 // Função principal
@@ -82,19 +82,19 @@ int main() {
 
     do {
         mostrarMenu();
-        wprintf("Escolha uma opção: ");
+        printf("Escolha uma opção: ");
         scanf("%d", &opcao);
         getchar(); // limpa o '\n' do buffer
 
         switch (opcao) {
             case 1:
-                wprintf("\nDigite a letra do PAI (ou qualquer letra se for a RAIZ): ");
+                printf("\nDigite a letra do PAI (ou qualquer letra se for a RAIZ): ");
                 scanf(" %c", &letraPai);
 
-                wprintf("Digite a letra do NÓ que será incluído: ");
+                printf("Digite a letra do NÓ que será incluído: ");
                 scanf(" %c", &letraNo);
 
-                wprintf("Digite o lado (Esquerda=%d / Direita=%d / Raiz=%d): ", ESQUERDA, DIREITA, RAIZ);
+                printf("Digite o lado (Esquerda=%d / Direita=%d / Raiz=%d): ", ESQUERDA, DIREITA, RAIZ);
                 scanf("%d", &lado);
 
                 if (lado == RAIZ && proximoIndice == 0) {
@@ -102,47 +102,47 @@ int main() {
                 } else if (lado != RAIZ) {
                     indicePai = buscarIndice(letraPai);
                     if (indicePai == -1) {
-                        wprintf("Erro: PAI '%c' não encontrado.\n", letraPai);
+                        printf("Erro: PAI '%c' não encontrado.\n", letraPai);
                         system("pause");
                     } else {
                         inserirNo(indicePai, letraNo, lado);
                         system("pause");
                     }
                 } else {
-                    wprintf("Erro: Raiz já existe.\n");
+                    printf("Erro: Raiz já existe.\n");
                     system("pause");
                 }
                 break;
 
             case 2:
-                wprintf("Digite a letra do NÓ a ser buscado: ");
+                printf("Digite a letra do NÓ a ser buscado: ");
                 scanf(" %c", &letraNo);
 
                 indicePai = buscarIndice(letraNo);
                 if (indicePai == -1) {
-                    wprintf("Nó não encontrado.\n");
+                    printf("Nó não encontrado.\n");
                 } else {
-                    wprintf("\nNó encontrado: %c\n", arvore[indicePai].letra);
+                    printf("\nNó encontrado: %c\n", arvore[indicePai].letra);
 
                     if (arvore[indicePai].esquerda != -1)
-                        wprintf("Filho Esquerdo: %c\n", arvore[arvore[indicePai].esquerda].letra);
+                        printf("Filho Esquerdo: %c\n", arvore[arvore[indicePai].esquerda].letra);
                     else
-                        wprintf("Filho Esquerdo: (nenhum)\n");
+                        printf("Filho Esquerdo: (nenhum)\n");
 
                     if (arvore[indicePai].direita != -1)
-                        wprintf("Filho Direito: %c\n", arvore[arvore[indicePai].direita].letra);
+                        printf("Filho Direito: %c\n", arvore[arvore[indicePai].direita].letra);
                     else
-                        wprintf("Filho Direito: (nenhum)\n");
+                        printf("Filho Direito: (nenhum)\n");
                 }
                 system("pause");
                 break;
 
             case 0:
-                wprintf("Saindo...\n");
+                printf("Saindo...\n");
                 break;
 
             default:
-                wprintf("Opção inválida!\n");
+                printf("Opção inválida!\n");
                 system("pause");
         }
 

@@ -9,11 +9,11 @@ int main()
     setlocale(LC_ALL,"Portuguese_Brazil");
     ponteiro=(int*)malloc(sizeof(int));
     if(ponteiro==NULL){
-        wprintf("Erro!");
+        printf("Erro!");
     }
     else{
         *ponteiro=42;
-        wprintf("Endereço do ponteiro: %i\nValor: %i\n",&ponteiro,*ponteiro);
+        printf("Endereço do ponteiro: %i\nValor: %i\n",&ponteiro,*ponteiro);
     }    
     return 0;
 }

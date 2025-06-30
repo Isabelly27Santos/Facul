@@ -48,36 +48,36 @@ int main(){
 void adicionar_livros(){
   int ch;
   if (livros.fim == tamanho) {
-    wprintf("\nA pilha está cheia, impossível empilhar!\n\n");
+    printf("\nA pilha está cheia, impossível empilhar!\n\n");
     system("pause");      
   } else {    
-    wprintf("\nDigite o código do livro: ");        
+    printf("\nDigite o código do livro: ");        
     scanf(" %d", &livros.codigo[livros.fim]);  
 
     // Limpar o buffer após scanf
     while ((ch = getchar()) != '\n' && ch != EOF);
 
-    wprintf("Digite o título do livro: ");        
+    printf("Digite o título do livro: ");        
     fgets(livros.titulo[livros.fim], sizeof(livros.titulo[livros.fim]), stdin);
     livros.titulo[livros.fim][strcspn(livros.titulo[livros.fim], "\n")] = '\0';
 
-    wprintf("Digite o autor do livro: ");        
+    printf("Digite o autor do livro: ");        
     fgets(livros.autor[livros.fim], sizeof(livros.autor[livros.fim]), stdin);
     livros.autor[livros.fim][strcspn(livros.autor[livros.fim], "\n")] = '\0';
 
     livros.fim++;  
-    wprintf("\n\nLivro adicionado com sucesso!!\n\n\n");
+    printf("\n\nLivro adicionado com sucesso!!\n\n\n");
     system("pause");  
   }        
 }
 
 void remover_livros() {
   if (livros.inicio == livros.fim) {
-    wprintf("\nA pilha está vazia, impossível desempilhar!\n\n");
+    printf("\nA pilha está vazia, impossível desempilhar!\n\n");
     system("pause");      
   } else {
     livros.fim--; // aponta para o último
-    wprintf("\n\nLivro \"%s\" removido com sucesso!!\n\n\n", livros.titulo[livros.fim]);
+    printf("\n\nLivro \"%s\" removido com sucesso!!\n\n\n", livros.titulo[livros.fim]);
 
     // Zera os dados (opcional, só para limpeza visual)
     livros.codigo[livros.fim] = 0;
@@ -90,22 +90,22 @@ void remover_livros() {
 
 void exibir_livros() {         
   if (livros.inicio == livros.fim) {
-    wprintf("\nA pilha está vazia!\n");
+    printf("\nA pilha está vazia!\n");
   } else {
     for (int i = livros.fim - 1; i >= livros.inicio; i--) {
-      wprintf("\nCódigo: %d", livros.codigo[i]);      
-      wprintf("\nTítulo: %s", livros.titulo[i]);
-      wprintf("\nAutor: %s", livros.autor[i]);
-      wprintf("\n_____________________________________\n");
+      printf("\nCódigo: %d", livros.codigo[i]);      
+      printf("\nTítulo: %s", livros.titulo[i]);
+      printf("\nAutor: %s", livros.autor[i]);
+      printf("\n_____________________________________\n");
     }   
   }
   system("pause");
 }
 
 void exibir_menu() {
-  wprintf("\nEscolha uma opção:\n");        
-  wprintf("1 - Adicionar novo livro na pilha\n");            
-  wprintf("2 - Remover livro da pilha\n");     
-  wprintf("3 - Exibir livros empilhados\n");          
-  wprintf("0 - Sair\n\n");          
+  printf("\nEscolha uma opção:\n");        
+  printf("1 - Adicionar novo livro na pilha\n");            
+  printf("2 - Remover livro da pilha\n");     
+  printf("3 - Exibir livros empilhados\n");          
+  printf("0 - Sair\n\n");          
 }

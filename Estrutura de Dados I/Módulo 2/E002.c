@@ -43,11 +43,11 @@ int main(){
 //Adicionar um elemento no final da Fila
 void fila_entrar(){
   if (fila.fim == tamanho) {
-        wprintf("\nA fila está cheia, volte outro dia!\n\n");          
+        printf("\nA fila está cheia, volte outro dia!\n\n");          
         system("pause");      
     }  
   else {    
-        wprintf("\nDigite o valor a ser inserido: ");        
+        printf("\nDigite o valor a ser inserido: ");        
         scanf(" %d", &fila.nome[fila.fim]);  
         fila.fim++;  
     }  
@@ -56,7 +56,7 @@ void fila_entrar(){
 //Retirar o primeiro elemento da Fila
 void fila_sair() {
   if (fila.inicio == fila.fim) {
-        wprintf("\nFila vazia, mas logo aparece alguém!\n\n");          
+        printf("\nFila vazia, mas logo aparece alguém!\n\n");          
         system("pause");      
     }          
   else {
@@ -70,18 +70,18 @@ void fila_sair() {
 
 //Mostrar o conteúdo da Fila
 void fila_mostrar() {
-  wprintf("[  ");        
+  printf("[  ");        
   for (int i = 0; i < tamanho; i++) {
-        wprintf("%d  ", fila.nome[i]);          
+        printf("%d  ", fila.nome[i]);          
    }
-  wprintf("]\n\n");        
+  printf("]\n\n");        
 }
 
 //Mostrar o menu de opções
 void exibir_menu() {
-  wprintf("\nEscolha uma opção:\n");        
-  wprintf("1 - Incluir na Fila\n");            
-  wprintf("2 - Excluir da Fila\n");   
-  wprintf("0 - Sair\n\n");           
+  printf("\nEscolha uma opção:\n");        
+  printf("1 - Incluir na Fila\n");            
+  printf("2 - Excluir da Fila\n");   
+  printf("0 - Sair\n\n");           
 }
      
