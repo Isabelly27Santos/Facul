@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 // Estrutura do nó da árvore
 typedef struct no {
@@ -44,6 +45,7 @@ void posOrdem(NO* raiz) {
 // Função principal
 int main() {
     NO* raiz = NULL;
+    setlocale(LC_ALL,"Portuguese");
 
     // Inserindo os valores na árvore
     raiz = inserir(raiz, 50);
