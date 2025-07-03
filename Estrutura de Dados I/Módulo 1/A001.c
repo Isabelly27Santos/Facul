@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
@@ -13,7 +12,7 @@ int main()
     }
     else{
         *ponteiro=42;
-        printf("Endereço do ponteiro: %i\nValor: %i\n",&ponteiro,*ponteiro);
+        printf("Endereï¿½o do ponteiro: %i\nValor: %i\n",&ponteiro,*ponteiro);
     }    
     return 0;
 }
