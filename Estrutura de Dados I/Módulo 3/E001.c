@@ -26,6 +26,7 @@ int opcao;
 int main() {
     srand(time(NULL));  // Inicializa gerador de números aleatórios
     opcao = 1;
+    setlocale (LC_ALL,"Portuguese");
 
     // Criando o nó inicial (cabeça da lista)
     listaPrincipal = (Lista) malloc(sizeof(Node)); //alocando memória
@@ -108,6 +109,8 @@ void remover_item(Lista lista) {
 void mostrar_lista(Lista lista) {
     system("cls");
     printf("Conteúdo da lista: [ ");
+
+    lista = lista->proximo; //faz imprimir a lista sem o zero inicial
 
     while (lista != NULL) {
         printf("%d ", lista->valor);
